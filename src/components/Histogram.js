@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import ExportData from './ExportData';
+import './Histogram.css';
 
 const Histogram = ({ wordOccurrences }) => {
   const chartRef = useRef(null);
@@ -27,7 +28,7 @@ const Histogram = ({ wordOccurrences }) => {
           {
             label: 'Occurrences',
             data,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            backgroundColor: 'rgb(66,101,214)',
           },
         ],
       },
@@ -58,11 +59,13 @@ const Histogram = ({ wordOccurrences }) => {
   const data = labels.map((word) => wordOccurrences[word]);
 
   return (
-    <div>
-      <h2>Click This button to download a CSV file of the histogram data. </h2>
-      <ExportData labels={labels} data={data} />
-      <h3>The histogram of the 20 most occurring words : </h3>
-      <canvas ref={chartRef} width="1000" height="600" />
+    <div className="histogram">
+      <div className="histogram__download-button">
+        <h2>Click This button to download a CSV file of the histogram data.</h2>
+        <ExportData labels={labels} data={data} />
+      </div>
+      <h3 className="histogram__title">The histogram of the 20 most occurring words:</h3>
+      <canvas ref={chartRef} className="histogram__chart" width="1000" height="600" />
     </div>
   );
 };

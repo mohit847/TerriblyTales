@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Histogram from './Histogram';
+import './WordOccurrences.css';
 
 const WordOccurrences = ({ data }) => {
   const [wordOccurrences, setWordOccurrences] = useState({});
@@ -21,20 +22,19 @@ const WordOccurrences = ({ data }) => {
   const handleShowHistogram = () => {
     setShowHistogram(true);
     setShowHistogramButton(false);
-    
   };
 
   return (
-    <div>
+    <div className="word-occurrences">
       {Object.keys(wordOccurrences).length === 0 ? (
-        <div>
-          <h2>Click This button to check the occurrences of each and every word</h2>
+        <div className="word-occurrences__button">
+          <h2>Click this button to check the occurrences of each and every word</h2>
           <button onClick={countWordOccurrences}>Occurrence</button>
         </div>
       ) : (
-        <div>
+        <div className="word-occurrences__result">
           {showHistogramButton ? (
-            <div>
+            <div className="word-occurrences__histogram-button">
               <h2>Click here to see the histogram of the 20 most occurring words.</h2>
               <button onClick={handleShowHistogram}>Show Histogram</button>
             </div>
@@ -44,7 +44,7 @@ const WordOccurrences = ({ data }) => {
             </>
           )}
           <h3>Word Occurrences:</h3>
-          <ul>
+          <ul className="word-occurrences__list">
             {Object.entries(wordOccurrences).map(([word, count]) => (
               <li key={word}>
                 {word}: {count}

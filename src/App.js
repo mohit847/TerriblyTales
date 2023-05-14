@@ -9,21 +9,14 @@ function App() {
     setShowComponent(true);
   }
 
-  const buttonStyle = {
-    marginTop:'200px',
-    borderRadius: '4px',
-    padding: '10px 20px',
-    fontSize: '16px',
-  };
- 
   return (
     <div className="App">
       {showComponent ? (
-        <div> 
+        <div className="App-content">
           <Content />
         </div>
       ) : (
-        <button style={buttonStyle} onClick={handleClick}>Submit</button>
+        <button className='btn' onClick={handleClick}>Submit</button>
       )}
     </div>
   );

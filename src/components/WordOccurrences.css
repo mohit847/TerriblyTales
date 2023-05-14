@@ -1,0 +1,71 @@
+/* WordOccurrences.css */
+
+.word-occurrences {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .word-occurrences__button {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .word-occurrences__button h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .word-occurrences__button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .word-occurrences__result {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .word-occurrences__histogram-button {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .word-occurrences__histogram-button h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .word-occurrences__histogram-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .word-occurrences__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .word-occurrences__list li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .word-occurrences__list li:last-child {
+    margin-bottom: 0;
+  }
+  
