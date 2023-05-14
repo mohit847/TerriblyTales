@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Content from './components/Content';
 import './App.css';
 
 function App() {
+  const [showComponent, setShowComponent] = useState(false);
+
+  const handleClick = () => {
+    setShowComponent(true);
+  }
+
+  const buttonStyle = {
+    marginTop:'200px',
+    borderRadius: '4px',
+    padding: '10px 20px',
+    fontSize: '16px',
+  };
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showComponent ? (
+        <div> 
+          <Content />
+        </div>
+      ) : (
+        <button style={buttonStyle} onClick={handleClick}>Submit</button>
+      )}
     </div>
   );
 }
